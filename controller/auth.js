@@ -80,6 +80,7 @@ export const user=async (req,res)=>{
             })
         }
         user.password=undefined;
+        user.id=user._id;
       return res.json( user)
 
     }
