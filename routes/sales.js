@@ -7,7 +7,7 @@ router.put("/sales/:_id",updatesales);
 router.patch("/sales/:_id",updatesales);
 router.delete("/sales/:_id",deletesales);
 router.get("/sales",Allsales);
-router.get("/sale_statistics/",requireSigin,sales_statistics);
+router.get("/sale_statistics/",sales_statistics);
 
 
 module.exports=router;

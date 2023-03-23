@@ -67,14 +67,14 @@ export const  Allsales=async(req,res)=>{
 export const sales_statistics=async(req,res)=>{
     try
     {
-        const userSales = await Sales.find({user_id: req.auth._id});
+        const userSales = await Sales.find({user_id: "641cb41a29726abe3b705cab"});
         const totalRevenue = userSales.reduce((acc, curr) => acc + curr.revenue, 0);
         const avgSales = totalRevenue / userSales.length;
         const AllSales = await Sales.find();
         const AlltotalRevenue = AllSales.reduce((acc, curr) => acc + curr.revenue, 0);
         const AllavgSales = AlltotalRevenue / AllSales.length;
-        const HighestRevenue= await Sales.find({user_id: req.auth._id}).sort({revenue:-1}).limit(1);
-const SalesNumber= await Sales.find({user_id: req.auth._id}).sort({sales_number:-1}).limit(1);
+        const HighestRevenue= await Sales.find({user_id: "641cb41a29726abe3b705cab"}).sort({revenue:-1}).limit(1);
+const SalesNumber= await Sales.find({user_id: "641cb41a29726abe3b705cab"}).sort({sales_number:-1}).limit(1);
 return res.json({
     "average_sales_for_current_user": avgSales,
     "average_sale_all_user": AllavgSales,
